@@ -1,0 +1,99 @@
+* { box-sizing: border-box; }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $fg-color;
+  overflow-x: hidden;
+  font: {
+    family: $font-serif;
+    size: 20px;
+    weight: 500;
+  }
+  background: {
+    image: url('./../static/oak-tree-bg.png');
+    color: $bg-color;
+    size: 200% auto;
+    position: top;
+    repeat: no-repeat;
+  }
+}
+
+p {
+  @include font-size-line-height(18px, 26px, $font-base-size);
+  margin: 0;
+  margin-bottom: 0.5em;
+
+  &.intro-text {
+    margin-bottom: 1.4em;
+    font-weight: 600;
+    @include font-size-line-height(20px, 34px, 18px);
+  }
+}
+
+em {
+  font-weight: 400i;
+}
+
+strong {
+  font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+  font: {
+    family: $font-sans;
+    weight: 300;
+  }
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: $font-36;
+}
+
+h2 {
+  font-size: $font-30;
+}
+
+h3 {
+  font-size: $font-24;
+}
+
+h4 {
+  font-size: $font-20;
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+  @include vend-prefix("transition", "color 0.5s ease-out");
+
+  &:hover {
+    color: $hover-red;
+    text-decoration: underline;
+  }
+}
+
+blockquote {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding: 1em 0;
+  padding-bottom: 2em;
+  border-bottom: 1px solid black;
+  max-width: 500px;
+  p {
+    font-size: $font-24;
+  }
+}
+
+img {
+  width: 100%;
+  padding: 1em 0;
+}
