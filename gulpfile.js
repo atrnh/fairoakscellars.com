@@ -65,3 +65,5 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', ['html', 'open', 'watch', 'sass']);
+
+gulp.task('build', ['sass']);
