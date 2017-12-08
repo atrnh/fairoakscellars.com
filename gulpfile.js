@@ -12,7 +12,6 @@ const config = {
     devBaseUrl: 'http://localhost',
     index: 'index.html',
     paths: {
-          html: './*.html',
           dist: './dist',
           js: './src/**/*.js',
           mainJs: './src/main.js',
@@ -52,18 +51,11 @@ gulp.task('sass', () => {
       .pipe(connect.reload());
 });
 
-gulp.task('html', () => {
-    return gulp.src(config.paths.html)
-      .pipe(gulp.dest(config.paths.dist))
-      .pipe(connect.reload());
-});
-
 gulp.task('watch', () => {
-    gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js']);
     gulp.watch(config.paths.sass, ['sass']);
 });
 
-gulp.task('default', ['html', 'open', 'watch', 'sass']);
+gulp.task('default', ['open', 'watch', 'sass']);
 
 gulp.task('build', ['sass']);
