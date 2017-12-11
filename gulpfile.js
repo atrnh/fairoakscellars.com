@@ -6,6 +6,8 @@ const open = require('gulp-open');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const var sourcemaps = require('gulp-sourcemaps');
 
 const config = {
     port: 5000,
@@ -16,13 +18,14 @@ const config = {
           js: './src/**/*.js',
           mainJs: './src/main.js',
           sass: './src/**/*.scss',
+          css: './src/**/*.css',
           mainSass: './src/main.scss'
         },
 };
 
 gulp.task('connect', () => {
     connect.server({
-          root: ['dist'],
+          root: ['.'],
           port: config.port,
           base: config.devBaseUrl,
           livereload: true,
@@ -47,15 +50,25 @@ gulp.task('js', () => {
 gulp.task('sass', () => {
     return gulp.src(config.paths.mainSass)
       .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest(`${config.paths.dist}/css`))
+      .pipe(gulp.dest(`.`))
       .pipe(connect.reload());
 });
 
+gulp.task('css', () => {
+  return gulp.src(config.paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(postcss([require('autoprefixer')]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`${config.paths.dist}/css`))
+    .pipe(connect.reload());
+})
+
 gulp.task('watch', () => {
-    gulp.watch(config.paths.js, ['js']);
-    gulp.watch(config.paths.sass, ['sass']);
+  gulp.watch(config.paths.js, ['js']);
+  gulp.watch(config.paths.sass, ['sass']);
+  gulp.watch(config.paths.css, ['css']);
 });
 
-gulp.task('default', ['open', 'watch', 'sass']);
+gulp.task('default', ['open', 'watch', 'sass', 'css']);
 
-gulp.task('build', ['sass']);
+gulp.task('build', ['sass', 'css']);

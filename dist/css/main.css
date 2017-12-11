@@ -160,7 +160,7 @@ nav {
             color: #B8D050; }
   .has-sidebar section {
     flex: 3;
-    min-width: 450px; }
+    min-width: 320px; }
     .has-sidebar section article {
       margin-bottom: 2em; }
 
@@ -173,6 +173,13 @@ nav {
 
 #linkedin-badge {
   width: 101px; }
+
+@media only screen and (max-width: 788px) {
+  body {
+    font-size: 16px; }
+  .sidebar li {
+    display: inline-block;
+    padding: 0 0.5em; } }
 
 @media only screen and (min-width: 788px) and (max-width: 916px) {
   body {
