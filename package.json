@@ -6,6 +6,7 @@
   "author": "Ashley Trinh <ashqtrinh@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^7.2.2",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",

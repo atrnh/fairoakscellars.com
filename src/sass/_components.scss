@@ -1,18 +1,24 @@
-.flex-container {
-  display: flex;
-  height: 100%;
-  flex-flow: column nowrap;
-  align-content: center;
+@import 'node_modules/bootstrap/scss/nav';
+
+.container-fluid {
+  @include media-breakpoint-up(md) {
+    margin-top: 200px;
+  }
 }
 
 #main-content {
+  @include make-row();
+
   background-color: white;
-  width: 85%;
   padding: 2em;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 header {
+  @include make-row();
+  @extend .justify-content-center;
+
   #logo-img {
     width: 200px;
     height: 150px;
@@ -24,18 +30,13 @@ header {
 }
 
 nav {
+  @include make-col-ready();
   margin: 1em auto;
   text-align: center;
-  max-width: 540px;
   ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    @extend .nav;
     li {
-      display: inline-block;
-      flex: 1 1 auto;
+      @extend .nav-item;
       text-align: center;
       font: {
         family: $font-sans;
@@ -43,6 +44,7 @@ nav {
       }
 
       a {
+        @extend .nav-link;
         color: $fg-color;
         border: {
           bottom: 1px solid rgba(74, 74, 74, 0);
@@ -66,19 +68,25 @@ nav {
   text-align: center;
 }
 
+section {
+  @include make-col-ready();
+}
+
 .has-sidebar {
-  display: flex;
-  flex-wrap: wrap;
+  @include make-row();
   margin-bottom: 2em;
 
   .sidebar {
-    flex: 1;
-    padding-right: 1em;
+    @include make-col-ready();
+
     ul {
+      @extend .nav, .flex-md-column;
+
       list-style: none;
       margin: 0;
       padding: 0;
       li {
+        @extend .nav-item;
         margin-bottom: 0.5em;
         font: {
           family: $font-sans;
@@ -86,6 +94,7 @@ nav {
         }
 
         a {
+          @extend .nav-link;
           color: $primary-green;
 
           &:hover {
@@ -94,11 +103,18 @@ nav {
         }
       }
     }
+
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
   }
 
   section {
-    flex: 3;
-    min-width: 320px;
+    @include make-col-ready();
+
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
 
     article {
       margin-bottom: 2em;

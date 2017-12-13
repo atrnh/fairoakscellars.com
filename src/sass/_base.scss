@@ -22,6 +22,14 @@ body {
     position: top;
     repeat: no-repeat;
   }
+
+  @include media-breakpoint-up(md) {
+    background-size: 150% auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background-size: 1200px auto;
+  }
 }
 
 p {

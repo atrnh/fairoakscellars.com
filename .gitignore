@@ -7,3 +7,5 @@ index.html_
 index.php.*
 node_modules/
 .DS_STORE
+*.css.map
+src/css
