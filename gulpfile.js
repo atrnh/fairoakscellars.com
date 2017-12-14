@@ -70,6 +70,6 @@ gulp.task('watch', () => {
   gulp.watch(config.paths.css, ['css']);
 });
 
-gulp.task('default', ['open', 'watch', 'sass', 'css']);
+gulp.task('default', ['open', 'watch', 'sass', 'css', 'js']);
 
 gulp.task('build', ['sass', 'css']);
