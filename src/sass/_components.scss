@@ -1,9 +1,11 @@
 @import 'node_modules/bootstrap/scss/nav';
+@import 'node_modules/bootstrap/scss/navbar';
 
 .container-fluid {
   @include media-breakpoint-up(md) {
-    margin-top: 200px;
+    margin-top: 430px;
   }
+  margin-top: 100px;
 }
 
 #main-content {
@@ -19,22 +21,22 @@ header {
   @include make-row();
   @extend .justify-content-center;
 
-  #logo-img {
-    width: 200px;
-    height: 150px;
-    margin: 0 auto;
-  }
+  // #logo-img {
+  //   width: 200px;
+  //   height: 150px;
+  //   margin: 0 auto;
+  // }
   #logo-title {
     margin: 0.1em;
   }
 }
 
 nav {
-  @include make-col-ready();
-  margin: 1em auto;
+  @extend .navbar;
   text-align: center;
+  background-color: $bg-color;
   ul {
-    @extend .nav;
+    @extend .navbar-nav;
     li {
       @extend .nav-item;
       text-align: center;
@@ -46,6 +48,7 @@ nav {
       a {
         @extend .nav-link;
         color: $fg-color;
+        margin: 0 1rem;
         border: {
           bottom: 1px solid rgba(74, 74, 74, 0);
         }
@@ -61,11 +64,10 @@ nav {
   }
 }
 
-#logo-title {
+.navbar-brand {
   font-family: $font-serif;
-  flex: none;
-  width: 100%;
   text-align: center;
+  font-size: $font-36;
 }
 
 section {

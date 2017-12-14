@@ -18,17 +18,9 @@ body {
   background: {
     image: url('/static/oak-tree-bg.png');
     color: $bg-color;
-    size: 200% auto;
+    size: 100% auto;
     position: top;
     repeat: no-repeat;
-  }
-
-  @include media-breakpoint-up(md) {
-    background-size: 150% auto;
-  }
-
-  @include media-breakpoint-up(lg) {
-    background-size: 1200px auto;
   }
 }
 
