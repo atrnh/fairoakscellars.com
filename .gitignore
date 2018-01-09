@@ -10,3 +10,4 @@ node_modules/
 *.css.map
 src/css
 yarn.lock
+env/
