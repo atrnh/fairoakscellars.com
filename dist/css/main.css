@@ -2786,8 +2786,12 @@ header {
     margin: 0.1em; }
 
 nav {
+  height: 70px;
   text-align: center;
   background-color: #F2EE9B; }
+  nav ul {
+    margin-top: 5px;
+  }
   nav ul li {
     text-align: center;
     font-family: "Nunito", Helvetica, sans-serif;
