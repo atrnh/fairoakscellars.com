@@ -2755,12 +2755,6 @@ img {
     .navbar-dark .navbar-text a:focus, .navbar-dark .navbar-text a:hover {
       color: #fff; }
 
-.container-fluid {
-  margin-top: 100px; }
-  @media (min-width: 768px) {
-    .container-fluid {
-      margin-top: 430px; } }
-
 #main-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2787,26 +2781,32 @@ header {
 
 nav {
   text-align: center;
-  background-color: #F2EE9B; }
-  nav ul li {
-    text-align: center;
-    font-family: "Nunito", Helvetica, sans-serif;
-    font-size: 0.7em; }
-    nav ul li a {
-      color: #4A4A4A;
-      margin: 0 1rem;
-      border-bottom: 1px solid rgba(74, 74, 74, 0);
-      -webkit-transition: border-bottom 0.5s ease-out;
-      transition: border-bottom 0.5s ease-out; }
-      nav ul li a:hover {
+  background-color: white;
+  padding: 0;
+  padding-bottom: 0.25em; }
+  nav ul {
+    margin-top: 0; }
+    nav ul li {
+      text-align: center;
+      font-family: "Nunito", Helvetica, sans-serif;
+      font-size: 0.7em; }
+      nav ul li a {
+        padding-bottom: 0.1em;
         color: #4A4A4A;
-        text-decoration: none;
-        border-bottom: 1px solid #4a4a4a; }
+        margin: 0 1rem;
+        border-bottom: 1px solid rgba(74, 74, 74, 0);
+        -webkit-transition: border-bottom 0.5s ease-out;
+        transition: border-bottom 0.5s ease-out; }
+        nav ul li a:hover {
+          color: #4A4A4A;
+          text-decoration: none;
+          border-bottom: 1px solid #4a4a4a; }
 
 .navbar-brand {
   font-family: "Cormorant Garamond", Times, serif;
   text-align: center;
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  line-height: 1em; }
 
 section {
   position: relative;
@@ -2872,5 +2872,22 @@ section {
 
 #linkedin-badge {
   width: 101px; }
+
+.svg-container {
+  height: 250px; }
+  @media (min-width: 768px) {
+    .svg-container {
+      height: 430px; } }
+
+.svg {
+  width: 130px;
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .svg {
+      width: 250px; } }
+  .svg object {
+    position: relative;
+    left: -20px;
+    margin-top: 60px; }
 
 /*# sourceMappingURL=main.css.map */
