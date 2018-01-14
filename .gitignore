@@ -9,5 +9,5 @@ node_modules/
 .DS_STORE
 *.css.map
 src/css
-yarn.lock
 env/
+yarn.lock
