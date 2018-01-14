@@ -72,4 +72,4 @@ gulp.task('watch', () => {
 
 gulp.task('default', ['open', 'watch', 'sass', 'css', 'js']);
 
-gulp.task('build', ['sass', 'css']);
+gulp.task('build', ['sass', 'css', 'js']);

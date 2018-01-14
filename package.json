@@ -24,10 +24,17 @@
     "babel-core": "^6.26.0",
     "bootstrap": "4.0.0-beta.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "popper.js": "^1.12.9"
 =======
     "popper.js": "^1.12.9",
     "request": "^2.83.0"
 >>>>>>> master
+=======
+    "gsap": "^1.20.3",
+    "popper.js": "^1.12.9",
+    "request": "^2.83.0",
+    "scrollmagic": "^2.0.5"
+>>>>>>> e9135d85d0ed68de8023bf56edd68766c31dd995
   }
 }
