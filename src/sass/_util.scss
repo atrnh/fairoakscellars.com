@@ -1,0 +1,41 @@
+/* ===BRAND=== */
+
+$font-sans: 'Nunito', Helvetica, sans-serif;
+$font-serif: 'Cormorant Garamond', Times, serif;
+$font-base-size: 20px;
+
+$bg-color: #F2EE9B;
+$fg-color: #4A4A4A;
+$primary-green: #86AF49;
+$hover-green: #B8D050;
+$red: #CF4F5D;
+$hover-red: #B32F3D;
+
+
+/* ===HELPERS=== */
+
+/* Calculates em for a target px size, using the initial px size */
+@function calculate-em($target-px, $base-px) {
+  @return ($target-px / $base-px) * 1em;
+}
+
+@mixin vend-prefix($prop, $val) {
+  -webkit-#{$prop}: #{$val};
+     -moz-#{$prop}: #{$val};
+       -o-#{$prop}: #{$val};
+          #{$prop}: #{$val};
+}
+
+/* Calculates appropriate em for line height based on font size */
+@mixin font-size-line-height($target-size, $target-height, $base-px) {
+  font-size: calculate-em($target-size, $base-px);
+  line-height: calculate-em($target-height, $target-size);
+}
+
+/* Various font sizes in em */
+$font-14: calculate-em(14px, $font-base-size);
+$font-18: calculate-em(18px, $font-base-size);
+$font-20: calculate-em(20px, $font-base-size);
+$font-24: calculate-em(24px, $font-base-size);
+$font-30: calculate-em(30px, $font-base-size);
+$font-36: calculate-em(36px, $font-base-size);
