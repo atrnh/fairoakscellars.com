@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.html",
   "repository": "https://github.com/atrnh/fairoakscellars.com.git",
-  "author": "Ashley Trinh <ashqtrinh@gmail.com>",
+  "author": "Ashley Trinh ashqtrinh@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.2.2",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
@@ -17,24 +18,14 @@
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "jquery": "^3.2.1",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "babel-core": "^6.26.0",
     "bootstrap": "4.0.0-beta.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "popper.js": "^1.12.9"
-=======
-    "popper.js": "^1.12.9",
-    "request": "^2.83.0"
->>>>>>> master
-=======
     "gsap": "^1.20.3",
+    "jquery": "^3.2.1",
     "popper.js": "^1.12.9",
     "request": "^2.83.0",
     "scrollmagic": "^2.0.5"
->>>>>>> e9135d85d0ed68de8023bf56edd68766c31dd995
   }
 }
