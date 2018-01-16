@@ -1,32 +1,60 @@
+import $ from 'jquery';
 import { TweenLite } from 'gsap';
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import ScrollMagic from 'scrollmagic';
-import $ from 'jquery';
+
+import './js/bootstrap.min';
+
+window.jQuery = $;
 
 const controller = new ScrollMagic.Controller();
 
 controller.scrollTo((newpos) => {
-  const navHeight = $('nav').height();
-  TweenLite.to(
-    window,
-    0.5,
-    {
-      scrollTo: {
-      y: newpos,
-      offsetY: navHeight + 40
-    }
-  });
+  if (newpos === 0) {
+    TweenLite.to(
+      window,
+      0.5,
+      {
+        scrollTo: {
+          y: 0
+        }
+      }
+    );
+  } else {
+    const navHeight = $('nav').height();
+    TweenLite.to(
+      window,
+      0.5,
+      {
+        scrollTo: {
+          y: newpos,
+          offsetY: navHeight + 40
+        }
+    });
+  }
 });
 
-$(document).on('click', 'a[href^="#"]', function (e) {
+const updateUrl = (id) => {
+  if (id === '#') { id = '/'; }
+  if (window.history && window.history.pushState) {
+    history.pushState('', document.title, id);
+  }
+}
+
+$(document).on('click', 'a[href^=\\#]', function (e) {
   const id = $(this).attr('href');
 
-  if ($(id).length > 0) {
+  if (id.length > 0) {
     e.preventDefault();
-    controller.scrollTo(id);
 
-    if (window.history && window.history.pushState) {
-      history.pushState('', document.title, id);
+    if (id === "#") {
+      controller.scrollTo(0);
+    } else {
+      controller.scrollTo(id);
     }
+
+    updateUrl(id);
+
+    $('#navCollapsedContent').collapse('hide');
   }
 });
