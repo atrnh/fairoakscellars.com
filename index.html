@@ -7,10 +7,12 @@
   <title>Fair Oaks Cellars</title>
 
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400i,500,600|Nunito:300" rel="stylesheet">
-  <link href="/dist/css/main.css" rel="stylesheet">
+  <link href="./dist/css/main.css" rel="stylesheet">
+
+  <script src="/dist/scripts/fontawesome-all.min.js"></script>
 </head>
 <body>
-  <nav class="fixed-top justify-content-center">
+  <nav id="desktop-nav" class="fixed-top navbar justify-content-center">
     <ul class="flex-row">
       <li><a href="#">Home</a></li>
       <li><a href="#our-story">Our Story</a></li>
@@ -20,6 +22,46 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="#trade">Trade</a></li>
     </ul>
+  </nav>
+  <nav id="mobile-nav" class="fixed-top navbar">
+    <a class="navbar-brand">
+      <img src="./static/FairOaksLogoTree.png" />
+      Fair Oaks Cellars
+    </a>
+    <button
+      id="menu-toggle"
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navCollapsedContent"
+      aria-controls="navCollapsedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="fa fa-bars"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navCollapsedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="active">
+          <a href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a href="#our-story">Our Story</a>
+        </li>
+        <li>
+          <a href="#wines">Wines</a>
+        </li>
+        <li>
+          <a href="#location">Location</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+        <li>
+          <a href="#trade">Trade</a>
+        </li>
+      </ul>
+    </div>
   </nav>
   <div class="container-fluid">
   <div class="svg-container">
