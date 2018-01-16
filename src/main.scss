@@ -2,7 +2,11 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import 'node_modules/bootstrap/scss/utilities';
+@import 'node_modules/bootstrap/scss/nav';
+@import 'node_modules/bootstrap/scss/navbar';
+@import 'node_modules/bootstrap/scss/transitions';
 
 @import 'sass/util';
 @import 'sass/base';
 @import 'sass/components';
+@import 'sass/media';

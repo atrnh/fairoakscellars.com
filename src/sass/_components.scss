@@ -25,15 +25,18 @@ header {
   }
 }
 
-nav {
-  @extend .navbar;
+#desktop-nav {
   text-align: center;
+}
+
+nav {
   background-color: white;
   padding: 0;
   padding-bottom: 0.25em;
   ul {
     @extend .navbar-nav;
     margin-top: 0;
+
     li {
       @extend .nav-item;
       text-align: center;
@@ -41,25 +44,25 @@ nav {
         family: $font-sans;
         size: $font-14;
       }
-
-      a {
-        @extend .nav-link;
-        padding-bottom: 0.1em;
-        color: $fg-color;
-        margin: 0 1rem;
-        border: {
-          bottom: 1px solid rgba(74, 74, 74, 0);
-        }
-        @include vend-prefix("transition", "border-bottom 0.5s ease-out");
-
-        &:hover {
-          color: $fg-color;
-          text-decoration: none;
-          border-bottom: 1px solid rgba(74, 74, 74, 1.0);
-        }
-      }
     }
   }
+  a {
+    @extend .nav-link;
+    padding-bottom: 0.1em;
+    color: $fg-color;
+    margin: 0 1rem;
+    border: {
+      bottom: 1px solid rgba(74, 74, 74, 0);
+    }
+    @include vend-prefix("transition", "border-bottom 0.5s ease-out");
+
+    &:hover {
+      color: $fg-color;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(74, 74, 74, 1.0);
+    }
+  }
+
 }
 
 .navbar-brand {
@@ -67,6 +70,22 @@ nav {
   text-align: center;
   font-size: $font-36;
   line-height: 1em;
+
+  img {
+    height: 40px;
+    padding: 0;
+    width: auto;
+  }
+}
+
+#mobile-nav a.navbar-brand {
+  padding: 0;
+  margin: 0;
+  font-size: $font-30;
+}
+
+#desktop-nav, #mobile-nav {
+  position: fixed;
 }
 
 section {
