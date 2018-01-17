@@ -9,7 +9,7 @@ window.jQuery = $;
 
 const controller = new ScrollMagic.Controller();
 
-controller.scrollTo((newpos) => {
+controller.scrollTo((newpos, f) => {
   if (newpos === 0) {
     TweenLite.to(
       window,
@@ -20,6 +20,8 @@ controller.scrollTo((newpos) => {
         }
       }
     );
+
+    updateUrl('#');
   } else {
     const navHeight = $('nav').height();
     TweenLite.to(
@@ -31,7 +33,11 @@ controller.scrollTo((newpos) => {
           offsetY: navHeight + 40
         }
     });
+
+    updateUrl(newpos);
   }
+
+  $('#navCollapsedContent').collapse('hide');
 });
 
 const updateUrl = (id) => {
@@ -53,8 +59,6 @@ $(document).on('click', 'a[href^=\\#]', function (e) {
       controller.scrollTo(id);
     }
 
-    updateUrl(id);
 
-    $('#navCollapsedContent').collapse('hide');
   }
 });

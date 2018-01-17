@@ -26573,13 +26573,15 @@ window.jQuery = _jquery2.default;
 
 var controller = new _scrollmagic2.default.Controller();
 
-controller.scrollTo(function (newpos) {
+controller.scrollTo(function (newpos, f) {
   if (newpos === 0) {
     _gsap.TweenLite.to(window, 0.5, {
       scrollTo: {
         y: 0
       }
     });
+
+    updateUrl('#');
   } else {
     var navHeight = (0, _jquery2.default)('nav').height();
     _gsap.TweenLite.to(window, 0.5, {
@@ -26588,7 +26590,11 @@ controller.scrollTo(function (newpos) {
         offsetY: navHeight + 40
       }
     });
+
+    updateUrl(newpos);
   }
+
+  (0, _jquery2.default)('#navCollapsedContent').collapse('hide');
 });
 
 var updateUrl = function updateUrl(id) {
@@ -26611,10 +26617,6 @@ var updateUrl = function updateUrl(id) {
     } else {
       controller.scrollTo(id);
     }
-
-    updateUrl(id);
-
-    (0, _jquery2.default)('#navCollapsedContent').collapse('hide');
   }
 });
 
