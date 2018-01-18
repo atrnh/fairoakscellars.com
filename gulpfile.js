@@ -13,6 +13,7 @@ const buffer = require('vinyl-buffer');
 const log = require('gulplog');
 const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
+const svgmin = require('gulp-svgmin');
 
 const config = {
     port: 5000,
@@ -25,7 +26,7 @@ const config = {
           sass: './src/**/*.scss',
           css: './src/**/*.css',
           mainSass: './src/main.scss',
-          html: './src/index.html'
+          html: './src/index.html',
         },
 };
 
@@ -92,12 +93,18 @@ gulp.task('css', () => {
     .pipe(connect.reload());
 })
 
+gulp.task('svg', () => {
+  return gulp.src('./src/svg/FairOaksLogo.svg')
+    .pipe(svgmin())
+    .pipe(gulp.dest('./static'));
+});
+
 gulp.task('watch', () => {
   gulp.watch(config.paths.js, ['js']);
   gulp.watch(config.paths.sass, ['sass']);
   gulp.watch(config.paths.css, ['css']);
 });
 
-gulp.task('default', ['open', 'watch', 'sass', 'css', 'js', 'html']);
+gulp.task('default', ['open', 'watch', 'sass', 'css', 'js', 'html', 'svg']);
 
 gulp.task('build', ['sass', 'css', 'js']);
