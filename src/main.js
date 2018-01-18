@@ -20,8 +20,6 @@ controller.scrollTo((newpos, f) => {
         }
       }
     );
-
-    updateUrl('#');
   } else {
     const navHeight = $('nav').height();
     TweenLite.to(
@@ -33,10 +31,8 @@ controller.scrollTo((newpos, f) => {
           offsetY: navHeight + 40
         }
     });
-
-    updateUrl(newpos);
   }
-
+  f();
   $('#navCollapsedContent').collapse('hide');
 });
 
@@ -49,16 +45,22 @@ const updateUrl = (id) => {
 
 $(document).on('click', 'a[href^=\\#]', function (e) {
   const id = $(this).attr('href');
+  console.log(`id ${id}`);
 
   if (id.length > 0) {
     e.preventDefault();
 
     if (id === "#") {
-      controller.scrollTo(0);
+      controller.scrollTo(0, () => {
+        updateUrl(id);
+
+      });
     } else {
-      controller.scrollTo(id);
+      console.log(id);
+      controller.scrollTo(id, () => {
+        updateUrl(id);
+
+      });
     }
-
-
   }
 });
