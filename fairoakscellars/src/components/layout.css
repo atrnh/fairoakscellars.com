@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Nunito');
+
+* { box-sizing: border-box; }
+
+html, body, #___gatsby, #___gatsby div {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#___gatsby {
+  position: relative;
+}
+
+#___gatsby:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle, #fffc 40%, #e1305c 75%),
+    url("../images/grape-picking.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: scroll;
+  background-blend-mode: screen, normal;
+}
+
+#___gatsby div {
+  position: relative;
+}
+

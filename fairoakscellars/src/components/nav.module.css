@@ -1,0 +1,27 @@
+nav {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+li {
+  font-size: 1.4rem;
+  display: block;
+  margin: 1rem 0;
+  padding: 0 0 0.5rem 0;
+  border-bottom: 1px solid #abd737;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
